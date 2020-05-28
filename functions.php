@@ -154,7 +154,7 @@ function remove_widget_title( $widget_title ) {
 function gd_artist_scripts() {
 	wp_enqueue_style( 'gd-artist-style', get_stylesheet_uri(), array(), _S_VERSION );
 	// Custom CSS
-	wp_enqueue_style( 'style', get_template_directory_uri() . '/css/style.css',false,'1.0','all');
+	wp_enqueue_style( 'style', get_template_directory_uri() . '/css/style.css',false,'1.1','all');
 	wp_style_add_data( 'gd-artist-style', 'rtl', 'replace' );
 
 	// Custom JS

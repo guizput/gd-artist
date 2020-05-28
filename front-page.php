@@ -28,6 +28,7 @@ $home_intro = get_field('home_intro');
 
 	<section class="g__cards">
 	  <div class="g__container">
+		  <?php get_sidebar() ?>
 	  	<?php
 	  		$posts = get_posts(array(
 					'posts_per_page'	=> -1,

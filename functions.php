@@ -130,14 +130,23 @@ function gd_artist_widgets_init() {
 			'name'          => esc_html__( 'Sidebar', 'gd-artist' ),
 			'id'            => 'sidebar-1',
 			'description'   => esc_html__( 'Add widgets here.', 'gd-artist' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
+			'before_widget' => '<div>',
+			'after_widget'  => '</div>',
+			'before_title'  => '<p style="margin:0">',
+			'after_title'   => '</p>',
 		)
 	);
 }
 add_action( 'widgets_init', 'gd_artist_widgets_init' );
+
+// REMOVE WIDGET TITLE IF IT BEGINS WITH EXCLAMATION POINT
+add_filter( 'widget_title', 'remove_widget_title' );
+function remove_widget_title( $widget_title ) {
+    if ( substr ( $widget_title, 0, 1 ) == '!' )
+        return;
+    else
+        return ( $widget_title );
+}
 
 /**
  * Enqueue scripts and styles.

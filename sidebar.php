@@ -11,7 +11,12 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	return;
 }
 ?>
-
-<aside id="secondary" class="widget-area">
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
-</aside><!-- #secondary -->
+<article style="
+    display: flex;
+    align-items: center;
+    justify-content: center;
+">
+  <div class="g__card active" style="width: 100%">
+  	<?php dynamic_sidebar( 'sidebar-1' ); ?>
+  </div>
+</article>

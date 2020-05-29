@@ -65,7 +65,6 @@ $post_image = get_field('post_image');
 			<?php 
 			endif; 
 			?>
-			<?php comments_template() ?>
 	  </article>
 	</div>
 

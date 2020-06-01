@@ -21,11 +21,11 @@ $post_image = get_field('post_image');
 
 ?>
 
-	<div class="g__container">
+	<div class="g__container" id="js__post">
 	  <article class="slide-in-top">
 	  	<div class="g__post-nav">
 	  		<?php if ( ! empty( $next_post ) ): ?>
-			    <a href="<?php echo get_permalink( $next_post->ID ); ?>">
+			    <a href="<?php echo get_permalink( $next_post->ID ); ?>" id="js__nextPost">
 		        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;" xml:space="preserve">
 		          <path d="M198.608,246.104L382.664,62.04c5.068-5.056,7.856-11.816,7.856-19.024c0-7.212-2.788-13.968-7.856-19.032l-16.128-16.12
 		              C361.476,2.792,354.712,0,347.504,0s-13.964,2.792-19.028,7.864L109.328,227.008c-5.084,5.08-7.868,11.868-7.848,19.084
@@ -39,7 +39,7 @@ $post_image = get_field('post_image');
 	      
 	    	<h1><?php the_title() ?></h1>
 	    	<?php if ( ! empty( $prev_post ) ): ?>
-			    <a href="<?php echo get_permalink( $prev_post->ID ); ?>">
+			    <a href="<?php echo get_permalink( $prev_post->ID ); ?>" id="js__prevPost">
 		        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 492.004 492.004" style="enable-background:new 0 0 492.004 492.004;" xml:space="preserve">
 		          <path d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12
 		              c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028

@@ -41,11 +41,15 @@ $home_intro = get_field('home_intro');
 						
 						setup_postdata( $post );
 						$post_image = get_field('post_image');
+						$img_size = 'medium';
+						$img_width = $post_image['sizes'][ $img_size . '-width' ];
+    				$img_height = $post_image['sizes'][ $img_size . '-height' ];
+						$is_portrait = $img_width < $img_height;
 						
 						?>
 						<a href="<?php the_permalink() ?>">
 						  <div class="g__card active">
-						    <div class="g__card__image" data-style="background-image: url(<?php echo $post_image['sizes']['large'] ?>)"></div>
+						    <div class="g__card__image" data-style="background-image: url(<?php echo $post_image['sizes'][$img_size] ?>); background-size:<?php if($is_portrait) {echo 'auto ' . $img_width . 'px'; } else { echo $img_height . 'px auto'; } ?>"></div>
 						    <h2><?php the_title() ?></h2>
 						    <h5><?php echo get_the_date() ?></h5>
 						  </div>

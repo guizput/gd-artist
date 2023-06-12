@@ -25,11 +25,27 @@
 </head>
 
 <body <?php body_class(); ?>>
-<main>
-  
-  <nav class="g__nav">
-    <a href="<?php echo home_url() ?>" class="g__nav__home"><img src="<?php echo get_template_directory_uri() . '/img/home-icon.svg' ?>" alt="Home"/></a>
-    <a href="<?php echo home_url() ?>"><img src="<?php echo get_template_directory_uri() . '/img/logo.jpg' ?>" alt="G|D Logo" /></a>
-  </nav>
-  
-  <div id="swup" class="transition-fade">
+  <nav
+      class="relative flex items-center justify-center border-b-2 border-gray-200 p-8"
+    >
+      <?php if($page_is_post) : ?>
+      <a class="absolute left-8 top-10" href="<?php echo home_url() ?>">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="h-8 w-8"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3"
+          />
+        </svg>
+      </a>
+      <?php endif; ?>
+
+      <a href="<?php echo home_url() ?>"><img src="<?php echo get_template_directory_uri() . '/img/logo.jpg' ?>" alt="G|D Logo" /></a>
+</nav>

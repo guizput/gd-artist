@@ -14,54 +14,51 @@
 
 get_header();
 
-// Custom fields
-
-$home_intro = get_field('home_intro');
-
 ?>
-
-	<section class="g__intro">
-	  <div class="g__container">
-	    <?php echo $home_intro ?>
-	  </div>
-	</section>
-
-	<section class="g__cards">
-	  <div class="g__container">
-		  <?php get_sidebar() ?>
-	  	<?php
+<main class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+	<div
+		class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8"
+		>
+		<?php
 	  		$posts = get_posts(array(
-					'posts_per_page'	=> -1,
-					'post_type'			=> 'post',
-				));
-			
-				if( $posts ): ?>
-						
-					<?php foreach( $posts as $post ): 
-						
-						setup_postdata( $post );
-						$post_image = get_field('post_image');
-						$img_size = 'medium';
-						$img_width = $post_image['sizes'][ $img_size . '-width' ];
-    				$img_height = $post_image['sizes'][ $img_size . '-height' ];
-						$is_portrait = $img_width < $img_height;
-						
-						?>
-						<a href="<?php the_permalink() ?>">
-						  <div class="g__card active">
-						    <div class="g__card__image" data-style="background-image: url(<?php echo $post_image['sizes'][$img_size] ?>); background-size:<?php if($is_portrait) {echo 'auto ' . $img_width . 'px'; } else { echo $img_height . 'px auto'; } ?>"></div>
-						    <h2><?php the_title() ?></h2>
-						    <h5><?php echo get_the_date() ?></h5>
-						  </div>
-						</a>  
+				'posts_per_page'	=> -1,
+				'post_type'			=> 'post',
+			));
+		
+			if( $posts ): ?>
 					
-					<?php endforeach;
+				<?php foreach( $posts as $post ): 
 					
-					wp_reset_postdata();
+					setup_postdata( $post );
+					$post_image = get_field('post_image');
+					$img_size = 'medium';
+					
+					?>
 
-				endif; ?>
-	  </div>
-	</section>
+					<a href="<?php the_permalink() ?>" class="group text-center">
+						<div
+						class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200"
+						>
+						<img
+							src="<?php echo $post_image['sizes'][$img_size] ?>"
+							alt="Image de <?php the_title() ?>"
+							class="h-full w-full object-cover object-center group-hover:opacity-75"
+							loading="lazy"
+						/>
+						</div>
+						<h3 class="mt-1 text-lg font-medium text-gray-700">
+							<?php the_title() ?>
+						</h3>
+						<p class="text-sm text-gray-600"><?php echo get_the_date() ?></p>
+					</a>
+				<?php endforeach;
+				
+				wp_reset_postdata();
+
+			endif; 
+		?>
+	</div>
+</main>
 
 <?php
 get_footer();

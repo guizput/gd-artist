@@ -31,7 +31,7 @@ get_header();
 					
 					setup_postdata( $post );
 					$post_image = get_field('post_image');
-					$img_size = 'medium';
+					$img_size = 'large';
 					
 					?>
 

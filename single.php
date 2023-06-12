@@ -22,6 +22,7 @@ $post_pdf = get_field('post_pdf');
 $post_image = get_field('post_image');
 
 ?>
+<main class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
 	<div class="text-center">
 		<h2 class="mt-1 text-3xl font-medium text-gray-700"><?php the_title() ?></h2>
 		<p class="text-base text-gray-600"><?php echo get_the_date() ?></p>
@@ -40,5 +41,7 @@ $post_image = get_field('post_image');
 			/>
 		<?php endif; ?>
 	</div>
+</main>
+
 <?php
 get_footer();

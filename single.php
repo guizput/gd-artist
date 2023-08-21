@@ -22,12 +22,8 @@ $post_pdf = get_field('post_pdf');
 $post_image = get_field('post_image');
 
 ?>
-<main class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-	<div class="text-center">
-		<h2 class="mt-1 text-3xl font-medium text-gray-700"><?php the_title() ?></h2>
-		<p class="text-base text-gray-600"><?php echo get_the_date() ?></p>
-	</div>
-	<div class="mt-16">
+<main class="mx-auto max-w-2xl p-4 lg:max-w-7xl">
+	<div>
 		<?php if( $post_pdf ): 
 			$post_url = $post_pdf['url'];
 			$home_url = home_url();
@@ -40,6 +36,10 @@ $post_image = get_field('post_image');
 				alt="<?php the_title() ?>"
 			/>
 		<?php endif; ?>
+	</div>
+	<div class="text-center">
+		<h2 class="mt-1 text-3xl font-medium text-gray-700"><?php the_title() ?></h2>
+		<p class="text-base text-gray-600"><?php echo get_the_date() ?></p>
 	</div>
 </main>
 

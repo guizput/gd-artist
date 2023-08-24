@@ -22,7 +22,7 @@ $post_pdf = get_field('post_pdf');
 $post_image = get_field('post_image');
 
 ?>
-<main class="mx-auto max-w-2xl p-4 lg:max-w-7xl">
+<main class="mx-auto max-w-2xl p-4">
 	<div>
 		<?php if( $post_pdf ): 
 			$post_url = $post_pdf['url'];

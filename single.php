@@ -37,7 +37,7 @@ $post_image = get_field('post_image');
 			/>
 		<?php endif; ?>
 	</div>
-	<div class="text-center">
+	<div class="text-center mt-8">
 		<!-- <h2 class="mt-1 text-3xl font-medium text-gray-700"><?php the_title() ?></h2> -->
 		<p class="text-base text-gray-600"><?php echo get_the_date() ?></p>
 	</div>
